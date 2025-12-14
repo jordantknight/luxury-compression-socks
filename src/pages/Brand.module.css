@@ -1,0 +1,66 @@
+.container {
+    padding-top: var(--space-xl);
+}
+
+.heroSection {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 var(--space-md);
+    background-color: var(--color-bg-primary);
+}
+
+.heroContent {
+    max-width: 800px;
+}
+
+.heroText {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-top: var(--space-md);
+    color: var(--color-text-secondary);
+}
+
+.storySection {
+    padding: var(--space-xl) var(--space-md);
+    background-color: #fff;
+}
+
+.storyGrid {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+}
+
+.storyGrid p {
+    margin-top: var(--space-sm);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+
+.quoteSection {
+    padding: var(--space-xl) var(--space-md);
+    background-color: var(--color-bg-secondary);
+    text-align: center;
+}
+
+.quote {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-style: italic;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.3;
+    color: var(--color-text-primary);
+}
+
+@media (max-width: 768px) {
+    .storyGrid {
+        grid-template-columns: 1fr;
+    }
+}

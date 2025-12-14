@@ -1,0 +1,116 @@
+.container {
+    padding-top: var(--space-xl);
+    background-color: var(--color-bg-primary);
+    /* Parchment */
+    min-height: 100vh;
+}
+
+.journalHeader {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    padding: 0 var(--space-md);
+}
+
+.featuredEntry {
+    padding-bottom: var(--space-xl);
+}
+
+.entryHeader {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    padding: 0 var(--space-md);
+}
+
+.date {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    /* Ash */
+    margin-top: 1rem;
+}
+
+.heroWrapper {
+    width: 100%;
+    height: 80vh;
+    /* Cinematic height */
+    overflow: hidden;
+    margin-bottom: var(--space-xl);
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    max-width: 720px;
+    /* Optimal reading width */
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--color-text-primary);
+}
+
+.content p {
+    margin-bottom: var(--space-lg);
+}
+
+.leads {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-xl);
+}
+
+.pullQuote {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-style: italic;
+    color: var(--color-accent-warm);
+    /* Espresso */
+    border-left: 2px solid var(--color-decoration);
+    /* Stone */
+    padding-left: var(--space-md);
+    margin: var(--space-xl) 0;
+    line-height: 1.3;
+}
+
+.inlineImage {
+    width: 100%;
+    height: auto;
+    margin: var(--space-md) 0 var(--space-xs);
+}
+
+.caption {
+    display: block;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    /* Ash */
+    font-style: italic;
+    margin-bottom: var(--space-lg);
+}
+
+.footer {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-decoration);
+    /* Stone */
+    text-align: center;
+}
+
+.shopLink {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--color-accent-primary);
+    /* Midnight */
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.shopLink:hover {
+    opacity: 0.7;
+}

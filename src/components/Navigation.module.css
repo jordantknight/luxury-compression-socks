@@ -1,0 +1,81 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--space-md) 0;
+    z-index: 100;
+    transition: all 0.4s ease;
+    background-color: transparent;
+}
+
+.solid {
+    background-color: var(--color-bg-primary);
+    /* Parchment */
+    padding: var(--space-sm) 0;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left,
+.right {
+    display: flex;
+    gap: var(--space-md);
+    flex: 1;
+}
+
+.right {
+    justify-content: flex-end;
+}
+
+.center {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.link,
+.cartBtn {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.textInverse {
+    color: var(--color-text-inverse);
+    /* Ivory */
+}
+
+.textPrimary {
+    color: var(--color-text-primary);
+    /* Ink */
+}
+
+.link:hover,
+.cartBtn:hover {
+    opacity: 0.7;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+    font-weight: 600;
+}
+
+.logoAccent {
+    font-style: italic;
+    font-family: var(--font-serif);
+}
