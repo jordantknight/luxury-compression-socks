@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './ProductCard.module.css';
 
 const ProductCard = ({ product }) => {
-    // Generate pattern styles dynamically
+    // Generate pattern styles dynamically (Fixed)
     const getPatternStyle = (pattern) => {
         switch (pattern) {
             case 'Micro Rib':
