@@ -2,11 +2,33 @@ import React from 'react';
 import ProductCard from '../components/ProductCard';
 import sockNavy from '../assets/sock-navy.png';
 
+// Palette from User Request
+const COLORS = {
+    MidnightNavy: '#1E2A36',
+    Charcoal: '#2B2E34',
+    Espresso: '#3A2E29',
+    DarkChocolate: '#2A1F1A',
+    HeatherGrey: '#6F6F6B',
+    Camel: '#B79A6B',
+    Taupe: '#8A8178',
+    Evergreen: '#2E463A',
+    Burgundy: '#5A2A2A',
+    DeepOlive: '#3F4A3C'
+};
+
 const MOCK_PRODUCTS = [
-    { id: 1, name: 'The Executive', price: '$48.00', colors: ['Navy', 'Charcoal', 'Black'], compression: '15-20mmHg', image: sockNavy },
-    { id: 2, name: 'The Traveler', price: '$48.00', colors: ['Espresso', 'Sand'], compression: '15-20mmHg', image: sockNavy },
-    { id: 3, name: 'Merino Everyday', price: '$55.00', colors: ['Grey', 'Navy'], compression: '20-30mmHg', image: sockNavy },
-    { id: 4, name: 'Silk Blend No. 1', price: '$65.00', colors: ['Cream'], compression: '15-20mmHg', image: sockNavy },
+    // Executive Series (Darks / Formals)
+    { id: 1, name: 'The Executive Navy', price: '$48.00', hex: COLORS.MidnightNavy, pattern: 'Fine Rib', compression: '15-20mmHg', image: sockNavy },
+    { id: 2, name: 'The Charcoal Rib', price: '$48.00', hex: COLORS.Charcoal, pattern: 'Micro Rib', compression: '15-20mmHg', image: sockNavy },
+    { id: 3, name: 'Espresso Pinstripe', price: '$48.00', hex: COLORS.Espresso, pattern: 'Micro Pinstripe', compression: '15-20mmHg', image: sockNavy },
+    { id: 4, name: 'Dark Chocolate Solid', price: '$48.00', hex: COLORS.DarkChocolate, pattern: 'Solid', compression: '15-20mmHg', image: sockNavy },
+
+    // Weekend/Travel (Naturals / Textures)
+    { id: 5, name: 'Alpine Evergreen', price: '$55.00', hex: COLORS.Evergreen, pattern: 'Birdseye', compression: '20-30mmHg', image: sockNavy },
+    { id: 6, name: 'Camel Hair Blend', price: '$65.00', hex: COLORS.Camel, pattern: 'Subtle Mélange', compression: '15-20mmHg', image: sockNavy },
+    { id: 7, name: 'Burgundy Travel', price: '$55.00', hex: COLORS.Burgundy, pattern: 'Micro Rib', compression: '20-30mmHg', image: sockNavy },
+    { id: 8, name: 'Heather Grey Daily', price: '$48.00', hex: COLORS.HeatherGrey, pattern: 'Solid', compression: '15-20mmHg', image: sockNavy },
+    { id: 9, name: 'Deep Olive Texture', price: '$48.00', hex: COLORS.DeepOlive, pattern: 'Birdseye', compression: '15-20mmHg', image: sockNavy },
 ];
 
 const Shop = () => {
@@ -22,7 +44,7 @@ const Shop = () => {
 
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
                     gap: 'var(--space-lg)'
                 }}>
                     {MOCK_PRODUCTS.map(p => (
