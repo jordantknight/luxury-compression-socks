@@ -24,18 +24,32 @@ const ProductCard = ({ product }) => {
 
     const mainColor = product.hex || '#1E2A36';
 
+    // Determine if this is a "Native" color (Raw photography) or needs tinting
+    // We treat MidnightNavy and Espresso as "Native" because we have exact photos for them.
+    const isNative = (product.hex === '#1E2A36' && product.image.includes('nav')) ||
+        (product.hex === '#3A2E29' && product.image.includes('espresso'));
+
     return (
         <div className={styles.card}>
             <Link to={`/product/${product.id}`} className={styles.imageLink}>
-                <div className={styles.imageWrapper} style={{ backgroundColor: mainColor }}>
-                    {/* 1. Base Texture (The Sock Image, Desaturated) */}
+                <div className={styles.imageWrapper}> {/* Removed background color from wrapper to save the paper */}
+
+                    {/* 1. Base Image */}
                     <img
                         src={product.image}
                         alt={product.name}
-                        className={styles.baseImage}
+                        className={isNative ? styles.nativeImage : styles.preparedImage}
                     />
 
-                    {/* 2. Pattern Layer (CSS Gradients) */}
+                    {/* 2. Spotlight Tint (Only for Variants) */}
+                    {!isNative && (
+                        <div
+                            className={styles.spotlightLayer}
+                            style={{ backgroundColor: mainColor }}
+                        />
+                    )}
+
+                    {/* 3. Pattern Layer */}
                     {product.pattern && (
                         <div className={styles.patternLayer} style={getPatternStyle(product.pattern)} />
                     )}

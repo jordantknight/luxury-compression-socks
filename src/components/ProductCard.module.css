@@ -14,32 +14,46 @@
     cursor: pointer;
 }
 
-/* The Base Texture (Grayscale) */
-.baseImage {
+/* 1. NATIVE IMAGE (No Filters, 100% Real) */
+/* Used for pure Navy and pure Espresso products */
+.nativeImage {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s ease;
-    /* Transformation: Gentle desaturation + light boost to accept dye */
-    filter: sepia(10%) grayscale(80%) brightness(1.1) contrast(1.05);
-    mix-blend-mode: multiply;
-    opacity: 1;
+    filter: none;
+    mix-blend-mode: normal;
 }
 
-/* The Color Layer */
-.colorLayer {
+/* 2. PREPARED IMAGE (For Tinting) */
+/* Desaturated slightly to accept the spotlight tint without color conflict */
+.preparedImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    /* Gentle prep: reduce saturation so the tint takes over, but keep texture */
+    filter: grayscale(100%) contrast(1.1) brightness(1.1);
+    mix-blend-mode: normal;
+}
+
+/* 3. SPOTLIGHT TINT LAYER */
+/* Applies color ONLY to the center (sock), fading out to preserve paper background */
+.spotlightLayer {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    mix-blend-mode: color;
-    /* Or multiply/overlay depending on look */
+    mix-blend-mode: multiply;
+    /* Dyes the underlying sock */
     pointer-events: none;
     z-index: 1;
+    /* The Magic Mask: Solid in center, transparent at edges */
+    mask-image: radial-gradient(circle at 50% 50%, black 20%, transparent 85%);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 20%, transparent 85%);
 }
 
-/* The Pattern Layer */
 .patternLayer {
     position: absolute;
     top: 0;
@@ -50,9 +64,13 @@
     pointer-events: none;
     z-index: 2;
     opacity: 0.6;
+    /* Also mask the pattern so it doesn't bleed onto the paper too much */
+    mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 90%);
+    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 90%);
 }
 
-.imageWrapper:hover .baseImage {
+.imageWrapper:hover .nativeImage,
+.imageWrapper:hover .preparedImage {
     transform: scale(1.05);
 }
 
