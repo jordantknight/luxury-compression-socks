@@ -13,10 +13,10 @@ const ProductCard = ({ product }) => {
             case 'Micro Pinstripe':
                 return { backgroundImage: 'repeating-linear-gradient(to bottom, transparent, transparent 4px, rgba(255,255,255,0.05) 4px, rgba(255,255,255,0.05) 5px)' };
             case 'Birdseye':
-                 return { 
-                     backgroundImage: 'radial-gradient(rgba(0,0,0,0.15) 1px, transparent 1px)',
-                     backgroundSize: '4px 4px' 
-                 };
+                return {
+                    backgroundImage: 'radial-gradient(rgba(0,0,0,0.15) 1px, transparent 1px)',
+                    backgroundSize: '4px 4px'
+                };
             default:
                 return {};
         }
@@ -29,18 +29,17 @@ const ProductCard = ({ product }) => {
             <Link to={`/product/${product.id}`} className={styles.imageLink}>
                 <div className={styles.imageWrapper} style={{ backgroundColor: mainColor }}>
                     {/* 1. Base Texture (The Sock Image, Desaturated) */}
-                    <img 
-                        src={product.image} 
-                        alt={product.name} 
-                        className={styles.baseImage} 
-                        style={{ mixBlendMode: 'multiply', opacity: 0.8 }}
+                    <img
+                        src={product.image}
+                        alt={product.name}
+                        className={styles.baseImage}
                     />
-                    
+
                     {/* 2. Pattern Layer (CSS Gradients) */}
                     {product.pattern && (
                         <div className={styles.patternLayer} style={getPatternStyle(product.pattern)} />
                     )}
-                    
+
                 </div>
             </Link>
             <div className={styles.details}>

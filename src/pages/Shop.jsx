@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductCard from '../components/ProductCard';
 import sockNavy from '../assets/sock-navy.png';
+import sockEspresso from '../assets/sock-espresso.png';
 
 // Palette from User Request
 const COLORS = {
@@ -17,18 +18,20 @@ const COLORS = {
 };
 
 const MOCK_PRODUCTS = [
-    // Executive Series (Darks / Formals)
+    // Executive Series (Cool Bases)
     { id: 1, name: 'The Executive Navy', price: '$48.00', hex: COLORS.MidnightNavy, pattern: 'Fine Rib', compression: '15-20mmHg', image: sockNavy },
     { id: 2, name: 'The Charcoal Rib', price: '$48.00', hex: COLORS.Charcoal, pattern: 'Micro Rib', compression: '15-20mmHg', image: sockNavy },
-    { id: 3, name: 'Espresso Pinstripe', price: '$48.00', hex: COLORS.Espresso, pattern: 'Micro Pinstripe', compression: '15-20mmHg', image: sockNavy },
-    { id: 4, name: 'Dark Chocolate Solid', price: '$48.00', hex: COLORS.DarkChocolate, pattern: 'Solid', compression: '15-20mmHg', image: sockNavy },
 
-    // Weekend/Travel (Naturals / Textures)
-    { id: 5, name: 'Alpine Evergreen', price: '$55.00', hex: COLORS.Evergreen, pattern: 'Birdseye', compression: '20-30mmHg', image: sockNavy },
-    { id: 6, name: 'Camel Hair Blend', price: '$65.00', hex: COLORS.Camel, pattern: 'Subtle Mélange', compression: '15-20mmHg', image: sockNavy },
-    { id: 7, name: 'Burgundy Travel', price: '$55.00', hex: COLORS.Burgundy, pattern: 'Micro Rib', compression: '20-30mmHg', image: sockNavy },
+    // Warm Series (Using Espresso Base for better tinting)
+    { id: 3, name: 'Espresso Pinstripe', price: '$48.00', hex: COLORS.Espresso, pattern: 'Micro Pinstripe', compression: '15-20mmHg', image: sockEspresso },
+    { id: 4, name: 'Dark Chocolate Solid', price: '$48.00', hex: COLORS.DarkChocolate, pattern: 'Solid', compression: '15-20mmHg', image: sockEspresso },
+
+    // Weekend/Travel (Mixed)
+    { id: 5, name: 'Alpine Evergreen', price: '$55.00', hex: COLORS.Evergreen, pattern: 'Birdseye', compression: '20-30mmHg', image: sockNavy }, // Green works well on cool base
+    { id: 6, name: 'Camel Hair Blend', price: '$65.00', hex: COLORS.Camel, pattern: 'Subtle Mélange', compression: '15-20mmHg', image: sockEspresso }, // Camel needs warm base
+    { id: 7, name: 'Burgundy Travel', price: '$55.00', hex: COLORS.Burgundy, pattern: 'Micro Rib', compression: '20-30mmHg', image: sockEspresso }, // Red needs warm base
     { id: 8, name: 'Heather Grey Daily', price: '$48.00', hex: COLORS.HeatherGrey, pattern: 'Solid', compression: '15-20mmHg', image: sockNavy },
-    { id: 9, name: 'Deep Olive Texture', price: '$48.00', hex: COLORS.DeepOlive, pattern: 'Birdseye', compression: '15-20mmHg', image: sockNavy },
+    { id: 9, name: 'Deep Olive Texture', price: '$48.00', hex: COLORS.DeepOlive, pattern: 'Birdseye', compression: '15-20mmHg', image: sockEspresso }, // Olive needs warm base
 ];
 
 const Shop = () => {
